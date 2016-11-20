@@ -13,7 +13,16 @@ class CreateDeviceTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('devices', function(Blueprint $table)
+        {
+            $table->increments('id')
+                  ->unique();
+            $table->string('serial');
+            $table->string('uuid')
+                  ->nullable();
+            $table->string('hostname')
+                  ->nullable();
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class CreateDeviceTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('devices');
     }
 }

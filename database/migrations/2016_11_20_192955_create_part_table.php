@@ -13,7 +13,28 @@ class CreatePartTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('parts', function(Blueprint $table)
+        {
+            $table->increments('id')
+                  ->unique();
+            $table->integer('type_id')
+                  ->unsigned();
+            $table->string('name')
+                  ->unique();
+            $table->integer('vendor_id')
+                  ->unsigned();
+            $table->integer('device_id')
+                  ->unsigned()
+                  ->nullable();
+            
+        });
+
+        Schema::table('parts', function($table)
+        {
+            $table->foreign('device_id')
+                  ->references('id')
+                  ->on('devices');
+        });
     }
 
     /**
@@ -23,6 +44,6 @@ class CreatePartTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('parts');
     }
 }
