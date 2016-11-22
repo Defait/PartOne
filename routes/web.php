@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('devices', 'DeviceController@index');
+Route::get('devices/{device}', 'DeviceController@show');

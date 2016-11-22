@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Device;
 use Illuminate\Http\Request;
 
 class DeviceController extends Controller
@@ -13,7 +13,8 @@ class DeviceController extends Controller
      */
     public function index()
     {
-        //
+        $devices = Device::all();
+        return view('device.index', compact('devices'));
     }
 
     /**
@@ -43,9 +44,9 @@ class DeviceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Device $device)
     {
-        //
+        return view('device.show', compact('device'));
     }
 
     /**
