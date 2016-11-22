@@ -11,13 +11,21 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
+$factory->define(App\Device::class, function (Faker\Generator $faker) {
 
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'serial' => $faker->unique()->randomNumber,
+        'uuid' => $faker->unique()->uuid,
+        'hostname' => 'backend0.phool.com',
+    ];
+});
+
+$factory->define(App\Part::class, function (Faker\Generator $faker) {
+
+    return [
+        'type_id' => $faker->numberBetween(0,5),
+        'name' => $faker->unique()->sentence(3, true),
+        'vendor_id' => $faker->numberBetween(0,10),
+        'device_id' => $faker->numberBetween(0,10),
     ];
 });
