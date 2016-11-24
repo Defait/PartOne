@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Part extends Model
+class Vendor extends Model
 {
     public function devices()
     {
         return $this->hasMany(Device::class);
     }
 
-    public function vendor()
+    public function parts()
     {
-        return $this->hasOne(Vendor::class);
+        return $this->hasMany(Part::class);
     }
 }
