@@ -14,7 +14,7 @@ class RemoveDeviceIdColumFromParts extends Migration
     public function up()
     {
         Schema::table('parts', function ($table) {
-            $table->dropColumn('device_id');
+            $table->dropForeign('parts_device_id_foreign');
         });
     }
 

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Device;
+use Illuminate\Http\Request;
 
-class DeviceController extends Controller
+class DiskController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,7 @@ class DeviceController extends Controller
      */
     public function index()
     {
-        $devices = Device::all();
-
-        return view('device.index', compact('devices'));
+        //
     }
 
     /**
@@ -45,9 +43,9 @@ class DeviceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Device $device)
+    public function show($id)
     {
-        return view('device.show', compact('device'));
+        //
     }
 
     /**

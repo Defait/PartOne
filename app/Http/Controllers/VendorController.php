@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Device;
+use App\Vendor;
 
-class DeviceController extends Controller
+class VendorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,9 @@ class DeviceController extends Controller
      */
     public function index()
     {
-        $devices = Device::all();
-
-        return view('device.index', compact('devices'));
+        $vendors = Vendor::all();
+        dd($vendors);
+        //return view('vendor.index', compact('vendors'));
     }
 
     /**
@@ -45,9 +45,9 @@ class DeviceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Device $device)
+    public function show(Vendor $vendor)
     {
-        return view('device.show', compact('device'));
+        return view('vendor.show', compact('vendor'));
     }
 
     /**

@@ -5,8 +5,8 @@
 {{ $device->hostname }}
 
 
-@foreach($device->parts as $part)
-    <li>{{ $part->name }}</li>
+@foreach($device->disks as $disk)
+    <li>{{ $disk->name }}</li>
 @endforeach
 
 @stop

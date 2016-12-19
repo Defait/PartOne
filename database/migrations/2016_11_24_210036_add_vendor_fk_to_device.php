@@ -15,6 +15,9 @@ class AddVendorFkToDevice extends Migration
     {
         Schema::table('devices', function($table)
         {
+            $table->integer('vendor_id')
+                  ->nullable()
+                  ->unsigned();
             $table->foreign('vendor_id')
                   ->references('id')
                   ->on('vendors');

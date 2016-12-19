@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('devices', 'DeviceController@index');
 Route::get('devices/{device}', 'DeviceController@show');
+
+Route::get('vendor', 'VendorController@index');
+Route::get('vendor/{vendor}', 'VendorController@show');
