@@ -10,4 +10,8 @@ class Device extends Model
     {
         return $this->hasMany(Disk::class);
     }
+    public function vendors()
+    {
+        return $this->hasOne(Vendor::class);
+    }
 }

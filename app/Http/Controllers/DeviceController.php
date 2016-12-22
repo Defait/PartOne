@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Device;
+use App\Vendor;
 
 class DeviceController extends Controller
 {
@@ -15,7 +16,7 @@ class DeviceController extends Controller
     {
         $devices = Device::all();
 
-        return view('device.index', compact('devices'));
+        return view('device.index', compact('devices', 'vendor'));
     }
 
     /**
@@ -47,7 +48,14 @@ class DeviceController extends Controller
      */
     public function show(Device $device)
     {
-        return view('device.show', compact('device'));
+        foreach(Vendor::all() as $vendor)
+        {
+            if($vendor->id == $device->vendor_id)
+            {
+                $vendorName = $vendor->name;
+            }
+        }
+        return view('device.show', compact('device', 'vendorName'));
     }
 
     /**
@@ -83,4 +91,5 @@ class DeviceController extends Controller
     {
         //
     }
+
 }

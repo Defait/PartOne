@@ -8,7 +8,7 @@ class Vendor extends Model
 {
     public function devices()
     {
-        return $this->hasMany(Device::class);
+        return $this->belongsToMany(Device::class);
     }
 
     public function parts()
