@@ -48,6 +48,14 @@ class DeviceController extends Controller
      */
     public function show(Device $device)
     {
+        $vendorName = $this->getVendorForDevice($device);
+        
+        return view('device.show', compact('device', 'vendorName'));
+    }
+
+    public function getVendorForDevice($device)
+    {
+        //dd($device);
         foreach(Vendor::all() as $vendor)
         {
             if($vendor->id == $device->vendor_id)
@@ -55,9 +63,8 @@ class DeviceController extends Controller
                 $vendorName = $vendor->name;
             }
         }
-        return view('device.show', compact('device', 'vendorName'));
+        return $vendorName;        
     }
-
     /**
      * Show the form for editing the specified resource.
      *
