@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Part;
 
 class PartController extends Controller
 {
@@ -13,7 +13,8 @@ class PartController extends Controller
      */
     public function index()
     {
-        //
+        $parts = Part::all();
+        return view('part.index', compact('parts'));
     }
 
     /**
