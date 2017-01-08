@@ -24,9 +24,9 @@ $factory->define(App\Device::class, function (Faker\Generator $faker) {
 $factory->define(App\Part::class, function (Faker\Generator $faker) {
 
     return [
-        'type_id'   => $faker->numberBetween(0,5),
+        'type_id'   => $faker->numberBetween(1,5),
         'name'      => $faker->unique()->sentence(3, true),
-        'vendor_id' => $faker->numberBetween(0,10),
+        'vendor_id' => $faker->numberBetween(1,10),
     ];
 });
 
