@@ -8,7 +8,7 @@
         <ul class="collection">
             <li class="collection-item avatar">
                 <i class="material-icons circle">folder</i>
-            <span class="title"><a href="devices/{{$device->id}}">{{ $device->hostname }}</a></span>
+            <span class="title"><a href="device/{{$device->id}}">{{ $device->hostname }}</a></span>
             <p>{{ $device->vendor_id }}<br>
                 Second Line
             </p>
