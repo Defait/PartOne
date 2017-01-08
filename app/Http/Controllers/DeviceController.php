@@ -16,7 +16,7 @@ class DeviceController extends Controller
     {
         $devices = Device::all();
 
-        return view('device.index', compact('devices', 'vendor'));
+        return view('device.index', compact('devices'));
     }
 
     /**
@@ -55,7 +55,6 @@ class DeviceController extends Controller
 
     public function getVendorForDevice($device)
     {
-        //dd($device);
         foreach(Vendor::all() as $vendor)
         {
             if($vendor->id == $device->vendor_id)
