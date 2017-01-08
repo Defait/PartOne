@@ -12,19 +12,19 @@ class PartTypesSeeder extends Seeder
     public function run()
     {
         DB::table('part_types')->insert([
-            'name' => 'disk',
+            'type' => 'disk',
         ]);
         DB::table('part_types')->insert([
-            'name' => 'cpu',
+            'type' => 'cpu',
         ]);
         DB::table('part_types')->insert([
-            'name' => 'ram',
+            'type' => 'ram',
         ]);
         DB::table('part_types')->insert([
-            'name' => 'motherboard',
+            'type' => 'motherboard',
         ]);
         DB::table('part_types')->insert([
-            'name' => 'controller',
+            'type' => 'controller',
         ]);
 
     }
